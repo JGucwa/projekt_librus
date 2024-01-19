@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using projekt_librus.Views;
 
 namespace projekt_librus
 {
@@ -10,7 +11,7 @@ namespace projekt_librus
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Logowanie();
         }
 
         protected override void OnStart()
