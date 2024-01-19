@@ -9,7 +9,7 @@
             <Entry x:Name="login" TextColor="white"/>
             <Label HorizontalTextAlignment="Center" Text="Hasło:" FontSize="Large" TextColor="white"/>
             <Entry x:Name="haslo" IsPassword="True" TextColor="white"/>
-            <Button Text="Dodaj" BackgroundColor="DarkGreen" WidthRequest="100"/>
+            <Button Text="Dodaj" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
