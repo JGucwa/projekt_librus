@@ -9,6 +9,7 @@ namespace projekt_librus.Views
     {
         [PrimaryKey, AutoIncrement]
         public int Ocena_Id { get; set; }    
+        public int User_id { get; set; }    
         public int Przedmiot_Id { get; set; }    
         public float Stopien { get; set; }    
         public DateTime Data {  get; set; }
