@@ -16,7 +16,7 @@ namespace projekt_librus
             {
                 if (database == null)
                 {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "librus.db3"));
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "librusdb.db3"));
                 }
                 return database;
             }
@@ -25,7 +25,7 @@ namespace projekt_librus
         {
             InitializeComponent();
 
-            MainPage = new Logowanie();
+            MainPage = new NavigationPage(new Logowanie());
         }
 
         protected override void OnStart()

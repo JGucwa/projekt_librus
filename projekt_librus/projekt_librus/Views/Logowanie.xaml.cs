@@ -15,6 +15,35 @@ namespace projekt_librus.Views
         public Logowanie()
         {
             InitializeComponent();
+            //dodaj();
+        }
+        public async void dodaj()
+        {
+            Uzytkownik x = new Uzytkownik()
+            {
+                Imie = "Jakub",
+                Nazwisko = "Gucwa",
+                Login = "000002n",
+                Haslo = "123",
+                isTeacher = true
+            };
+            await App.Database.DodajUzytkownika(x);
+            Przedmiot sbj = new Przedmiot()
+            {
+                Nazwa = "Programowanie"
+            };
+            await App.Database.DodajPrzedmiot(sbj);
+            Ocena s = new Ocena()
+            {
+                Uzytkownik_id = 1,
+                Przedmiot_Id = 1,
+                Przedmiot_Nazwa = "Programowanie",
+                Stopien = "4+",
+                Data = DateTime.Now,
+                Opis = "Sprawdzian",
+                Okres = "Okres 1"
+            };
+            await App.Database.DodajOcene(s);
         }
         private async void LogowaniePrzycisk(object sender, EventArgs e)
         {

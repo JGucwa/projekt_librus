@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projekt_librus.Views.Logowanie"
-             BackgroundColor="DimGray">
+             BackgroundColor="DimGray"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Margin="10">
             <Label HorizontalTextAlignment="Center" Text="Login:" FontSize="Large" TextColor="white"/>
             <Entry x:Name="login" TextColor="white"/>
             <Label HorizontalTextAlignment="Center" Text="Hasło:" FontSize="Large" TextColor="white"/>
             <Entry x:Name="haslo" IsPassword="True" TextColor="white"/>
-            <Button Text="Dodaj" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
+            <Button Text="Loguj" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

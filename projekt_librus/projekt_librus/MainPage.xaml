@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="projekt_librus.MainPage">
+             x:Class="projekt_librus.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <ContentPage IconImageSource="home.png" BackgroundColor="#3e3e3e">
         <ContentPage.Content>
@@ -14,7 +15,7 @@
                                 <Frame Padding="0" BackgroundColor="#3e3e3e">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
@@ -39,7 +40,7 @@
                                                     <ColumnDefinition Width="20"/>
                                                     <ColumnDefinition/>
                                                 </Grid.ColumnDefinitions>
-                                                <Label Text="{Binding Stopien}" Grid.RowSpan="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
+                                                <Label Text="{Binding Stopien}" Grid.Column="0" Grid.RowSpan="2" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
                                                 <StackLayout Orientation="Horizontal" Grid.Column="1">
                                                     <Label Text="{Binding Przedmiot_Nazwa}" TextColor="White"/>
                                                     <Label Text="{Binding Data, StringFormat='{{}{0:dd.MM}'}" TextColor="White"/>
@@ -111,7 +112,7 @@
                     <Label Text="Wyberz kategorie" TextColor="white"/>
                     <Picker x:Name="P_Przedmiot">
                         <Picker.Items>
-                            <x:String></x:String>
+                            <x:String>Programowanie</x:String>
                         </Picker.Items>
                     </Picker>
                 </StackLayout>
@@ -119,7 +120,16 @@
                     <Label Text="Wyberz ocene" TextColor="white"/>
                     <Picker x:Name="P_Stopien">
                         <Picker.Items>
-                            <x:String></x:String>
+                            <x:String>6</x:String>
+                            <x:String>5+</x:String>
+                            <x:String>5</x:String>
+                            <x:String>4+</x:String>
+                            <x:String>4</x:String>
+                            <x:String>3+</x:String>
+                            <x:String>3</x:String>
+                            <x:String>2+</x:String>
+                            <x:String>2</x:String>
+                            <x:String>1</x:String>
                         </Picker.Items>
                     </Picker>
                 </StackLayout>
@@ -128,7 +138,7 @@
                     <Editor x:Name="E_Opis"/>
                 </StackLayout>
                 <Frame CornerRadius="15" Padding="5">
-                    <Button Text="Dodaj ocenę" BackgroundColor="White"/>
+                    <Button Text="Dodaj ocenę" BackgroundColor="White" Clicked="Dodaj_Ocene"/>
                 </Frame>
             </StackLayout>
         </ContentPage.Content>
