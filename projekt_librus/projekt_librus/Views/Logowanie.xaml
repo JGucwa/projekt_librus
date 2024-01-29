@@ -11,6 +11,7 @@
             <Label HorizontalTextAlignment="Center" Text="Hasło:" FontSize="Large" TextColor="white"/>
             <Entry x:Name="haslo" IsPassword="True" TextColor="white"/>
             <Button Text="Loguj" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
+            <Button Text="Loguj jako Admin" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogujAdmin" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

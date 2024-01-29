@@ -40,7 +40,7 @@ namespace projekt_librus.Views
             return _database.QueryAsync<Przedmiot>("SELECT * FROM Przedmiot");
         }
 
-        public Task<List<Ocena>> WszyscieOceny()
+        public Task<List<Ocena>> WszystkieOceny()
         {
             return _database.QueryAsync<Ocena>("SELECT * FROM Ocena");
         }
@@ -55,7 +55,7 @@ namespace projekt_librus.Views
             return _database.InsertAsync(ocena);
         }
 
-        public Task<List<Ocena>> WszystkieOcenyFiltrowane(int uzytkownik_id, int przedmiot_id, int okres)
+        public Task<List<Ocena>> WszystkieOcenyFiltrowane(int uzytkownik_id, int przedmiot_id, string okres)
         {
             return _database.QueryAsync<Ocena>("SELECT * FROM Ocena WHERE Uzytkownik_id=? AND Przedmiot_id=? AND Okres=?", uzytkownik_id, przedmiot_id, okres);
         }

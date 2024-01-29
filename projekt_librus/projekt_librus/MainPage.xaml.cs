@@ -25,8 +25,7 @@ namespace projekt_librus
             Ocena o = new Ocena()
             {
                 Uzytkownik_id = 0,
-                Przedmiot_Id = 0,
-                Przedmiot_Nazwa = "Programowanie",
+                Przedmiot_Nazwa = P_Stopien.SelectedItem.ToString(),
                 Stopien = P_Stopien.SelectedItem.ToString(),
                 Data = DateTime.Now,
                 Opis = E_Opis.Text,

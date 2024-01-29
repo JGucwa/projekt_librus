@@ -36,7 +36,6 @@ namespace projekt_librus.Views
             Ocena s = new Ocena()
             {
                 Uzytkownik_id = 1,
-                Przedmiot_Id = 1,
                 Przedmiot_Nazwa = "Programowanie",
                 Stopien = "4+",
                 Data = DateTime.Now,
@@ -55,6 +54,14 @@ namespace projekt_librus.Views
             }
 
             var uzytkownik = uzytkownicy.ElementAt(0);
+            Navigation.PushAsync(new MainPage(uzytkownik));
+        }
+        private async void LogujAdmin(object sender, EventArgs e)
+        {
+            var uzytkownicy = await App.Database.WszyscyUzytkownicy();
+
+            var uzytkownik = uzytkownicy.ElementAt(0);
+            
             Navigation.PushAsync(new MainPage(uzytkownik));
         }
     }
