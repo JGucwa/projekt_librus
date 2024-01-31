@@ -33,6 +33,10 @@ namespace projekt_librus
             };
             await App.Database.DodajOcene(o);
 
+            P_Stopien.SelectedItem = 0;
+            P_Stopien.SelectedItem = 0;
+            E_Opis.Text = String.Empty;
+
             UploadData();
         }
 
@@ -48,7 +52,7 @@ namespace projekt_librus
             {
                 List<string> row = new List<string>();
 
-                var wynikiOkres1 = await App.Database.WszystkieOcenyFiltrowane(this.uzytkownik.Id, przedmiot.Przedmiot_id, "Okres 1");
+                var wynikiOkres1 = await App.Database.WszystkieOcenyFiltrowane(this.uzytkownik.Id, przedmiot.Nazwa, "Okres 1");
                 string wynikiOkres1Text = "";
                 foreach (var wynik in wynikiOkres1)
                 {
@@ -64,7 +68,7 @@ namespace projekt_librus
             {
                 List<string> row = new List<string>();
 
-                var wynikiOkres2 = await App.Database.WszystkieOcenyFiltrowane(this.uzytkownik.Id, przedmiot.Przedmiot_id, "Okres 2");
+                var wynikiOkres2 = await App.Database.WszystkieOcenyFiltrowane(this.uzytkownik.Id, przedmiot.Nazwa, "Okres 2");
                 string wynikiOkres2Text = "";
                 foreach (var wynik in wynikiOkres2)
                 {

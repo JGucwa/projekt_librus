@@ -10,6 +10,7 @@ namespace projekt_librus.Views
         [PrimaryKey, AutoIncrement]
         public int Ocena_Id { get; set; }    
         public int Uzytkownik_id { get; set; }      
+        public string Przedmiot_id { get; set; }    
         public string Przedmiot_Nazwa { get; set; }    
         public string Stopien { get; set; }    
         public DateTime Data {  get; set; }
