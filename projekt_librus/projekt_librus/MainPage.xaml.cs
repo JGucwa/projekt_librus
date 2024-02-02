@@ -24,8 +24,8 @@ namespace projekt_librus
         {
             Ocena o = new Ocena()
             {
-                Uzytkownik_id = 0,
-                Przedmiot_Nazwa = P_Stopien.SelectedItem.ToString(),
+                Uzytkownik_id = uzytkownik.Id,
+                Przedmiot_Nazwa = P_Przedmiot.SelectedItem.ToString(),
                 Stopien = P_Stopien.SelectedItem.ToString(),
                 Data = DateTime.Now,
                 Opis = E_Opis.Text,
@@ -42,7 +42,7 @@ namespace projekt_librus
 
         public async void UploadData()
         {
-            LV_WynikiUzytkownika.ItemsSource = await App.Database.WszystkieOceny();
+            LV_WynikiUzytkownika.ItemsSource = await App.Database.WszystkieOcenyUzytkownika(uzytkownik.Id);
 
             List<List<string>> okres1_wynik = new List<List<string>>();
             List<List<string>> okres2_wynik = new List<List<string>>();

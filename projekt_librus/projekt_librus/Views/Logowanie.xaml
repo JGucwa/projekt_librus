@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="projekt_librus.Views.Logowanie"
-             BackgroundColor="DimGray"
+             BackgroundColor="#3e3e3e"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Margin="10">
@@ -10,8 +10,8 @@
             <Entry x:Name="login" TextColor="white"/>
             <Label HorizontalTextAlignment="Center" Text="Hasło:" FontSize="Large" TextColor="white"/>
             <Entry x:Name="haslo" IsPassword="True" TextColor="white"/>
-            <Button Text="Loguj" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
-            <Button Text="Loguj jako Admin" BackgroundColor="DarkGreen" WidthRequest="100" Clicked="LogujAdmin" VerticalOptions="EndAndExpand"/>
+            <Button Text="Loguj" BackgroundColor="CadetBlue" WidthRequest="100" Clicked="LogowaniePrzycisk"/>
+            <Button Text="Rejestruj" BackgroundColor="CadetBlue" WidthRequest="100" Clicked="Rejestruj"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

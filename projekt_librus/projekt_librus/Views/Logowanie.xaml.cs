@@ -15,7 +15,6 @@ namespace projekt_librus.Views
         public Logowanie()
         {
             InitializeComponent();
-            //dodaj();
         }
         public async void dodaj()
         {
@@ -56,12 +55,29 @@ namespace projekt_librus.Views
             var uzytkownik = uzytkownicy.ElementAt(0);
             Navigation.PushAsync(new MainPage(uzytkownik));
         }
-        private async void LogujAdmin(object sender, EventArgs e)
+        private async void Rejestruj(object sender, EventArgs e)
         {
-            var uzytkownicy = await App.Database.WszyscyUzytkownicy();
-
-            var uzytkownik = uzytkownicy.ElementAt(0);
+            var uzytkownicy = await App.Database.WszyscyUzytkownicyFilter(login.Text, haslo.Text);
             
+            if(uzytkownicy.Count == 0)
+            {
+                Uzytkownik x = new Uzytkownik()
+                {
+                    Imie = "Imie",
+                    Nazwisko = "Nazwisko",
+                    Login = login.Text,
+                    Haslo = haslo.Text,
+                    isTeacher = true
+                };
+                await App.Database.DodajUzytkownika(x);
+            }
+            else
+            {
+                DisplayAlert("Blad", "Konto istnieje", "OK");
+            }
+            uzytkownicy = await App.Database.WszyscyUzytkownicyFilter(login.Text, haslo.Text);
+            var uzytkownik = uzytkownicy.ElementAt(0);
+
             Navigation.PushAsync(new MainPage(uzytkownik));
         }
     }

@@ -44,6 +44,10 @@ namespace projekt_librus.Views
         {
             return _database.QueryAsync<Ocena>("SELECT * FROM Ocena");
         }
+        public Task<List<Ocena>> WszystkieOcenyUzytkownika(int uzytkownik_id)
+        {
+            return _database.QueryAsync<Ocena>("SELECT * FROM Ocena WHERE Uzytkownik_id=?", uzytkownik_id);
+        }
 
         public Task<int> DodajPrzedmiot(Przedmiot przedmiot)
         {
